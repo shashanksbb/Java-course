@@ -78,6 +78,17 @@ public int getRecursive(int i)
 			return  (new IntList(L.head+x, incrList(L.tail, x)));
 	}
 
+		public static IntList dincrList(IntList L, int x)
+	{ 
+		IntList P = L;
+		while(L.tail!=null)
+		{
+			L.head = L.head+x;
+			L=L.tail;
+		}
+		return P;
+	}
+
 	public static void main(String[] args)
 	{
 
@@ -106,5 +117,11 @@ public int getRecursive(int i)
 		displayList(L);
 		displayList(incrList(L,3));
 		displayList(L);
+
+
+		displayList(L);
+		displayList(dincrList(L,3));
+		displayList(L);
+
 	}
 }
